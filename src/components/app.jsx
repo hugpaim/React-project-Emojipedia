@@ -2,26 +2,26 @@ import React from "react";
 import emojipedia from "../emojipedia";
 import Term from "./terms";
 
-function makeemoji(emoji){
-    return < Term
-    key={emoji.id}
-    emoji={emoji.emoji}
-    name={emoji.name}
-    meaning={emoji.meaning}
-    />
-};
 
-function App() {
+export default function App() {
   return (
     <div>
       <h1>
         <span>emojipedia</span>
       </h1>
       <dl className="dictionary">
-        {emojipedia.map(makeemoji)}
+        {emojipedia.map(emoji =>(
+    < Term
+    key={emoji.id}
+    emoji={emoji.emoji}
+    name={emoji.name}
+    meaning={emoji.meaning}
+    />
+))}
       </dl>
     </div>
   );
 }
 
-export default App;
+
+
